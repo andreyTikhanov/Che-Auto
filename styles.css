@@ -1,11 +1,18 @@
+
 .logo {  /* размеры логотипа */
     width: 9%; 
     max-width: 150px; 
     height: auto;
+    padding: 0;
+    margin: 0;
 }
 .slogan {
-    width: 70%;
-    padding: 0px 60px 0px 100px;
+    width: 1000px;
+    height: auto;
+    padding: 0%;
+}
+.slogan-mobile{
+    display: none;
 }
 .navbar-collapse {  /* расположение ссылок в div для ссылок */
     display: flex;  /* распологает все дочерние элементы */
@@ -39,7 +46,8 @@ header {   /* настройки header */
     background-color: #D3D3DA;
     font-size: 20px;
     height: auto;
-    padding: 5px 60px 5px 60px;
+    padding: 0;
+    margin: 0;
     overflow: hidden;
 }
 html, body {   /* общие настройки */
@@ -70,8 +78,12 @@ body{   /* настройки для body*/
     .logo {  /* размер логотипа */
         width: 22%; 
         max-width: 100px;
-    }   
-    .slogan{   /* размер слогана*/
+    } 
+    .slogan{
+        display: none;
+    }  
+    .slogan-mobile{   /* размер слогана*/
+        display: block;
         width: 70%;
         height: auto;
         padding: 0px 10px 0px 10px;
