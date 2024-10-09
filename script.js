@@ -3,16 +3,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const navbarCollapse = document.querySelector('.navbar-collapse');
 
     navbarToggler.addEventListener('click', function() {
-        if (navbarCollapse.style.right === '0px') {
-            navbarCollapse.style.right = '-100%';
-        } else {
-            navbarCollapse.style.right = '0';
-        }
+        navbarCollapse.classList.toggle('show'); // Используйте класс 'show' для управления видимостью
     });
-
     document.addEventListener('click', function(event) {
         if (!navbarCollapse.contains(event.target) && !navbarToggler.contains(event.target)) {
-            navbarCollapse.style.right = '-100%';
+            navbarCollapse.classList.remove('show'); // Удалите класс 'show', если кликнули вне меню
         }
     });
 });
+

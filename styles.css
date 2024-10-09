@@ -1,145 +1,117 @@
-.navbar-nav .nav-link {
-    color:  #DF572A;
-    font-size: 25px;
+.logo {  /* размеры логотипа */
+    width: 9%; 
+    max-width: 150px; 
+    height: auto;
 }
-.navbar-nav .nav-link:hover{
-    color: #B82E00;
+.slogan {
+    width: 70%;
+    padding: 0px 60px 0px 100px;
 }
-.navbar-slogan {
-    margin-left: 150px;
-    max-width: 45%;
-    width: auto;
+.navbar-collapse {  /* расположение ссылок в div для ссылок */
+    display: flex;  /* распологает все дочерние элементы */
+    align-items: center;   /* вырвнивает все дочерние элементы по центру */
+    margin-left: auto;   /* сдвигает крайний элемент вправо*/
+    justify-content: flex-end;
 }
-.logo {
-    width: 80%;
+.navbar-nav {  /* расположение ссылок в ul */
+    display: flex;
+    flex-direction: row;   /* распологаем ссылки горизотально*/
+    gap: 5%;   /* промежуток между элементами*/
+    padding-right: 50px;
 }
-@media (max-width: 768px) {
-    .header{
-        height: auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .navbar-slogan{
-        display: none;
-        
-    }
-    .logo{
-        width: 45%;
-        height: auto;
-        margin-left: -30%;
-    }
-    .navbar-collapse {
-        background-color: #DF572A;
-        width: 60%;
-        position: fixed;
-        top: 0;
-        right: -100%; 
-        height: 30vh;
-        z-index: 999;
-        margin: 0;
-        transition: right 0.3s ease;
-        flex-direction: column;
-        justify-content: center;
-        padding-top: 20px;
-        border: 2px solid red; 
-    }
-    .navbar-collapse.show {
-        right: 0 !important; 
-    }
-    .navbar-nav .nav-link {
-        color: #fff;
-        padding: 10px 20px;
-        font-size: 20px;
-    }
-    .navbar-toggler {   /*гамбург - меню*/
-        margin-left: auto;
-        background-color: #DF572A;
-        border: none;
-        width: 35px;
-        height: 40px;
-        padding: 5px;
-        margin: 0%;
-        justify-content: flex-end;
-    }
-    .navbar-toggler-icon{
-        width: 20px;
-        height: 30px;
-        background-color: #DF572A;
-        padding: 5px;
-    }
-    .navbar-brand{
-        justify-content: flex-start;
-        display: flex;
-        flex: 1;
-    }
-    .container-fluid{
-        justify-content: space-between;
-    }
-    .navbar{
-        padding: 10px;
-        position: relative;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .content-container{
-        padding-top: 10px;
-    }
+.nav-link {   /* настройки ссылок */
+    color:#DF572A;
+    white-space: nowrap;   /* игнорируем пробел для ссылки О нас */ 
 }
-header {
+.nav-link:hover{   /* настройки ссылок при наведении */
+    color: #A33400;
+}
+.header-container {   /* расположение элементов в header */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header {   /* настройки header */
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    background-color: #FFFFFF;
+    background-color: #D3D3DA;
     font-size: 20px;
-    color: white;
-    padding: 10px 0;
     height: auto;
+    padding: 5px 60px 5px 60px;
+    overflow: hidden;
 }
-body{
-    background-color: #FFFFFF;
+html, body {   /* общие настройки */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;   /* скрываем все что выходит за ширину экрана*/
 }
-.content-container{
+body{   /* настройки для body*/
+    background-color: #D3D3DA;
+}
+.content-container{ /* основной контейнер */
     width: 100%;
-    padding-top: 55px;
 }
-.banner-image{
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 1);
-    padding-top: 50px;
+.banner-image{   /* */
     width: 100%;
-    height: auto;
-    max-height: 60vh;
+    height: 80%;
     object-fit: cover;
-    position: absolute;
-    transition: opacity 1.2s ease-in-out;
 }
-
-.mainImageContainer{
+.mainImageContainer{   /**/
     position: relative;
     width: 100%;
     height: 100%;
-    max-height: 60vh;
-    perspective: 1000px;
 }
-
-/* Переднее изображение (по умолчанию видимо) */
-.front-image {
-    opacity: 1;
-
-}
-
-/* Заднее изображение (по умолчанию скрыто) */
-.back-image {
-    opacity: 0;
-}
-
-/* При наведении плавно меняем видимость */
-.mainImage-container:hover .front-image {
-    opacity: 0; /* Исчезает переднее изображение */
-}
-
-.mainImage-container:hover .back-image {
-    opacity: 1; /* Появляется заднее изображение */
+@media (max-width: 768px) {
+    .header {
+        padding: 5px 10px 5px 10px;
+    }
+    .logo {  /* размер логотипа */
+        width: 22%; 
+        max-width: 100px;
+    }   
+    .slogan{   /* размер слогана*/
+        width: 70%;
+        height: auto;
+        padding: 0px 10px 0px 10px;
+    }
+    .nav-link{  /*цвет ссылок*/
+        color:#D3D3DA;
+    }
+    .navbar-nav { /* распологаем ссылки по колонкам*/
+        flex-direction: column !important;
+        justify-content: space-between;
+    }
+    .navbar-toggler {  /* гамбург-меню */
+        background-color: #DF572A;
+        border: none;
+        border-radius: 5px;
+        padding: 0.25rem;  /* Уменьшаем отступы внутри кнопки */
+        width: 27px;  /* Устанавливаем ширину кнопки */
+        height: 32px;  /* Устанавливаем высоту кнопки */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .navbar-toggler .fa-bars {  /* настройки иконки гамбургера */
+        color: #D3D3DA; 
+        font-size: 1.2rem;  /* Уменьшаем размер иконки */
+    }
+    
+    .navbar-collapse {  /*всплывающее меню*/
+        background-color: #DF572A;
+        width: 50%;
+        height: auto;
+        position: fixed;
+        top: 0.1%;
+        right: -100%; 
+        z-index: 999;
+        transition: right 0.5s ease;
+        flex-direction: column;
+    }
+    .navbar-collapse.show {  /* Показываем меню при открытии */
+        right: 0; 
+    }
 }
