@@ -1,0 +1,110 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Che Auto — автосервис</title>
+    <meta name="description" content="Che Auto — ремонт и обслуживание автомобилей. Онлайн-запись, ТО, ремонт двигателя, ходовой и трансмиссий. Самара." />
+    <link rel="preload" href="/images/cheLogo1.svg" as="image">
+    <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+
+    <header class="site-header" id="top">
+        <div class="container nav">
+            <a class="brand" href="#top" aria-label="Che Auto">
+                <img src="/images/cheLogo1.svg" alt="Che Auto" class="brand__logo">
+            </a>
+
+            <div class="slogan-center">
+                <img src="/images/slogan.png" alt="Революция в мире ремонта автомобилей" class="brand__slogan">
+            </div>
+
+            <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav class="nav__menu" id="nav">
+                <a href="#services">Услуги</a>
+                <a href="#about">О нас</a>
+                <a href="#contacts">Контакты</a>
+                <a href="#booking" class="btn btn--primary btn--soft">Записаться</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" role="banner">
+        <div class="hero__bg" style="--hero:url('/images/hero-lift.jpg')"></div>
+        <div class="container hero__content">
+            <h1 class="hero__title">Надёжный автосервис в Самаре</h1>
+            <p class="hero__lead">ТО, ремонт двигателя, ходовой и трансмиссий — быстро и честно.</p>
+            <div class="hero__actions">
+                <a href="#booking" class="btn btn--primary btn--lg">Записаться онлайн</a>
+                <a href="#services" class="btn btn--ghost btn--lg">Наши услуги</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section__title">Услуги</h2>
+
+            <div class="cards">
+                <a class="service" style="--bg:url('/images/engine.png')">
+                </a>
+
+                <a class="service" style="--bg:url('/images/hodovka.png')">
+                </a>
+
+                <a class="service" style="--bg:url('/images/to.png')">
+                </a>
+
+                <a class="service" style="--bg:url('/images/transmission.png')">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section section--alt">
+        <div class="container about">
+            <div class="about__text">
+                <h2 class="section__title">О нас</h2>
+                <p>Che Auto — команда мастеров 10+ лет опыта. Работаем быстро и по-честному, даём гарантию.</p>
+                <ul class="list">
+                    <li>Прозрачные цены и согласование работ</li>
+                    <li>Гарантия на выполненные работы</li>
+                    <li>Удобная онлайн-запись</li>
+                </ul>
+            </div>
+            <div class="about__media">
+                <div class="media-placeholder"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking" class="section cta">
+        <div class="container cta__box">
+            <h2 class="cta__title">Готовы помочь вашему авто</h2>
+            <p class="cta__text">Оставьте заявку — мы свяжемся и подтвердим время.</p>
+            <a href="#" class="btn btn--primary btn--lg">Оставить заявку</a>
+        </div>
+    </section>
+
+    <footer id="contacts" class="site-footer">
+        <div class="container footer">
+            <div>
+                <strong>Che Auto</strong><br />
+                Самара, ул. Примерная, 10<br />
+                Пн-Сб 9:00–20:00
+            </div>
+            <div>
+                Тел: <a href="tel:+79991234567">+7 (999) 123-45-67</a><br />
+                WhatsApp/Telegram: <a href="https://t.me/" rel="noopener">написать</a>
+            </div>
+        </div>
+        <div class="copy">© Che Auto, 2025</div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
