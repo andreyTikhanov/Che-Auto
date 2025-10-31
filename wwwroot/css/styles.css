@@ -373,6 +373,19 @@ body {
     color: #ddd;
 }
 
+/*=============Карты=====================*/
+#ya-map {
+    height: 360px;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    margin: 0 16px 16px;
+    background: #f3f4f6;
+}
+
+.map-actions {
+    padding-top: 8px;
+}
+
 .footer {
     display: flex;
     gap: 24px;
@@ -393,6 +406,7 @@ body {
     padding: 10px 0 16px;
     color: #aaa;
 }
+
 
 /* =======================================================================
    АДАПТИВ: ПЛАНШЕТ/НОУТ
@@ -486,5 +500,10 @@ body {
             height: auto;
             object-fit: contain;
         }
+
+    #ya-map {
+        height: 280px;
+        margin: 0 16px 8px;
+    }
 }
 
