@@ -15,16 +15,11 @@ async function fetchJSON(url, timeout = 5000) {
     const ctrl = new AbortController();
     const tm = setTimeout(() => ctrl.abort("timeout"), timeout);
     try {
-        const r = await fetch(url, {
-            signal: ctrl.signal,
-            cache: "no-cache",
-            headers: { "ngrok-skip-browser-warning": "true" }
-        });
+        const r = await fetch(url, { signal: ctrl.signal, cache: "no-cache" });
         if (!r.ok) throw new Error("HTTP " + r.status);
         return await r.json();
     } finally { clearTimeout(tm); }
 }
-
 async function postJSON(url, data, timeout = 8000) {
     const ctrl = new AbortController();
     const tm = setTimeout(() => ctrl.abort("timeout"), timeout);
@@ -41,12 +36,7 @@ async function postJSON(url, data, timeout = 8000) {
 }
 
 // ВАЖНО: эндпоинты на корне приложения
-function api(path) {
-    const meta = document.querySelector('meta[name="api-base"]');
-    const base = meta?.content || "/api/";
-    return base + path;
-}
-
+function api(path) { return `/api/${path}`; }
 
 // ============== Загрузка марок/моделей ==============
 (async function init() {
