@@ -1,0 +1,142 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Запись — Che Auto</title>
+    <link rel="stylesheet" href="/css/styles.css?v=book1">
+    <style>
+        /* Мини-стили формы (можно перенести в styles.css) */
+        .form-wrap {
+            max-width: 720px;
+            margin: 24px auto;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,.06)
+        }
+
+        .form-grid {
+            display: grid;
+            gap: 14px;
+            grid-template-columns: 1fr 1fr
+        }
+
+            .form-grid .full {
+                grid-column: 1/-1
+            }
+
+        .form-wrap h1 {
+            margin: 0 0 12px
+        }
+
+        .field label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 6px
+        }
+
+        .field select, .field input, .field textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            font: inherit
+        }
+
+        .field small {
+            color: #6b7280
+        }
+
+        .actions {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+            margin-top: 10px
+        }
+
+        @media (max-width:720px) {
+            .form-grid {
+                grid-template-columns: 1fr
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <a class="brand" href="/" aria-label="Che Auto">
+                <img src="/images/cheLogo1.svg" alt="Che Auto" class="brand__logo">
+            </a>
+            <div class="slogan-center"><img src="/images/slogan.png" alt="" class="brand__slogan"></div>
+            <nav class="nav__menu"><a href="/#services">Услуги</a><a href="/#about">О нас</a><a href="/#contacts">Контакты</a></nav>
+        </div>
+    </header>
+
+    <main class="section section--alt">
+        <div class="container">
+            <div class="form-wrap">
+                <h1>Онлайн-запись</h1>
+                <p class="muted">Оставьте контакты и данные авто — перезвоним для подтверждения времени.</p>
+
+                <form id="bookingForm" novalidate>
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="make">Марка</label>
+                            <select id="make" required>
+                                <option value="" disabled selected>Выберите марку</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="model">Модель</label>
+                            <select id="model" required disabled>
+                                <option value="" disabled selected>Сначала выберите марку</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="year">Год выпуска</label>
+                            <input id="year" type="number" inputmode="numeric" placeholder="например, 2018" min="1980" max="2099">
+                        </div>
+
+                        <div class="field">
+                            <label for="mileage">Пробег, км</label>
+                            <input id="mileage" type="number" inputmode="numeric" placeholder="например, 120000" min="0">
+                        </div>
+
+                        <div class="field">
+                            <label for="name">Имя</label>
+                            <input id="name" type="text" required placeholder="Как к вам обращаться">
+                        </div>
+
+                        <div class="field">
+                            <label for="phone">Телефон</label>
+                            <input id="phone" type="tel" required placeholder="+7 9.." pattern="^\+?\d[\d\-\s\(\)]{9,}$">
+                            <small>Мы позвоним для подтверждения записи</small>
+                        </div>
+
+                        <div class="field full">
+                            <label for="datetime">Удобное время</label>
+                            <input id="datetime" type="datetime-local">
+                        </div>
+
+                        <div class="field full">
+                            <label for="comment">Комментарий</label>
+                            <textarea id="comment" rows="4" placeholder="Что беспокоит, пожелания по времени и т. п."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="actions">
+                        <a class="btn btn--ghost" href="/">Отмена</a>
+                        <button class="btn btn--primary btn--soft" type="submit">Отправить заявку</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/booking-fast.js"></script>
+</body>
+</html>

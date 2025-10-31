@@ -339,6 +339,29 @@ body {
     border: 1px dashed rgba(0,0,0,.08);
 }
 
+.about__image {
+    width: 60%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    /* без opacity:0 */
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Анимацию включаем только когда JS добавит класс .will-animate */
+.will-animate .about__image {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.will-animate.show .about__image {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* =======================================================================
    CTA
    ======================================================================= */
@@ -453,6 +476,7 @@ body {
         display: none;
         flex-direction: column;
         gap: 6px;
+        z-index: 100;
     }
 
         .nav__menu.open {
@@ -475,8 +499,6 @@ body {
     .hero__slogan {
         max-width: 60vw !important;
         width: 60vw !important;
-        /* если нужно прям крошечным — раскомментируй: */
-        /* max-width: 120px !important; width: 120px !important; */
     }
 
     /* Сетки/карточки */
@@ -500,6 +522,11 @@ body {
             height: auto;
             object-fit: contain;
         }
+
+    .about__image {
+        width: 50%;
+        border-radius: 12px;
+    }
 
     #ya-map {
         height: 280px;

@@ -19,3 +19,33 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
         el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const fadeEls = document.querySelectorAll(".fade-in");
+
+    // ВКЛЮЧАЕМ анимацию только при наличии JS
+    fadeEls.forEach(el => el.classList.add("will-animate"));
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    fadeEls.forEach(el => observer.observe(el));
+});
+// Гарантированный переход на /booking.html (мобильные клики + закрытие бургера)
+document.querySelectorAll('.js-booking-link').forEach(a => {
+    a.addEventListener('click', (e) => {
+        // не трогаем якорные ссылки, у нас тут именно переход на страницу
+        e.stopPropagation(); // на всякий случай, чтобы бургер/оверлеи не перехватили
+        // если меню открыто — закроем, но переход всё равно совершим
+        const nav = document.getElementById('nav');
+        nav?.classList.remove('open');
+        // жёсткий переход
+        window.location.href = '/booking.html';
+    });
+});
